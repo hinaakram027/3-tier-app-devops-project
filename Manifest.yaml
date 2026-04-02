@@ -54,7 +54,6 @@ spec:
           periodSeconds: 5
           successThreshold: 1
           -----
-          
 apiVersion: v1
 kind: Service
 metadata:
@@ -68,7 +67,6 @@ spec:
   selector:
     role: api
     ----
-    
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -102,7 +100,6 @@ spec:
         ports:
         - containerPort: 3000
 -----
-
 apiVersion: v1
 kind: Service
 metadata: 
@@ -116,7 +113,6 @@ spec:
   selector:
     role: frontend
 -----
-
 apiVersion: apps/v1
 kind: Deployment
 metadata: 
@@ -164,7 +160,6 @@ spec:
         persistentVolumeClaim:
           claimName: mongo-volume-claim
           -----
-          
 apiVersion: v1
 kind: PersistentVolume
 metadata:
@@ -179,7 +174,6 @@ spec:
   hostPath:
     path: /data/db
 -----
-
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
@@ -193,7 +187,6 @@ spec:
     requests:
       storage: 1Gi
 -----
-
 apiVersion: v1
 kind: Secret
 metadata: 
@@ -204,7 +197,6 @@ data:
   password: cGFzc3dvcmQxMjM=   #Three-Tier-Project
   username: YWRtaW4= #admin
 -----
-
 apiVersion: v1
 kind: Service
 metadata:
