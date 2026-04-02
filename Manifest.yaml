@@ -53,7 +53,7 @@ spec:
           initialDelaySeconds: 5
           periodSeconds: 5
           successThreshold: 1
-          -----
+---
 apiVersion: v1
 kind: Service
 metadata:
@@ -66,7 +66,7 @@ spec:
   type: LoadBalancer
   selector:
     role: api
-    ----
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -99,7 +99,7 @@ spec:
             value: "http://backend.amanpathakdevops.study/api/tasks"
         ports:
         - containerPort: 3000
------
+---
 apiVersion: v1
 kind: Service
 metadata: 
@@ -112,7 +112,7 @@ spec:
   type: LoadBalancer
   selector:
     role: frontend
------
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata: 
@@ -159,7 +159,7 @@ spec:
       - name: mongo-volume
         persistentVolumeClaim:
           claimName: mongo-volume-claim
-          -----
+---
 apiVersion: v1
 kind: PersistentVolume
 metadata:
@@ -186,7 +186,7 @@ spec:
   resources:
     requests:
       storage: 1Gi
------
+---
 apiVersion: v1
 kind: Secret
 metadata: 
@@ -196,7 +196,7 @@ type: Opaque
 data:  
   password: cGFzc3dvcmQxMjM=   #Three-Tier-Project
   username: YWRtaW4= #admin
------
+---
 apiVersion: v1
 kind: Service
 metadata:
